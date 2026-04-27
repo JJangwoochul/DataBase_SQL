@@ -1,0 +1,36 @@
+/*1.접속이름 =>TEST , 2.계정 SYSTEM , 3.명령어 SHOW USER*/
+SHOW USER;
+/*2.테이블 설계 및 생성 -> TEST_MEMBER 테이블 생성*/
+SELECT * FROM TEST_MEMBER ;
+
+/*3) 1.TEST_MEMBER 테이블에서 모든 회원의 이름(MEM_NAME)과 직책(JOB) 출력*/
+SELECT MEM_NAME , JOB
+FROM TEST_MEMBER ;
+
+/*3) 2.급여(SAL)가 3000이상인 회원의 이름 , 직책 , 급여를 조회하시오.*/
+SELECT * FROM TEST_MEMBER;
+SELECT MEM_NAME , JOB , SAL
+FROM TEST_MEMBER
+WHERE SAL >= 3000 ;
+
+/*3) 3.부서번호가 10,20,30인 회원의 모든 정보를 출력하시오.*/
+SELECT * FROM TEST_MEMBER ;
+SELECT * FROM TEST_MEMBER WHERE DEPTNO IN (10 , 20 , 30);
+
+/*3) 4.직책이 MANAGER가 아니면서 SALESMAN도 아닌 사원을 조회하시오*/
+SELECT * FROM TEST_MEMBER ;
+SELECT *
+FROM TEST_MEMBER 
+WHERE JOB NOT IN ('MANAGER','SALESMAN') ;
+
+/*3) 5.직책이 CLERK이면서 급여가 1200 이상인 사원의 정보를 조회하시오*/
+SELECT * FROM TEST_MEMBER ;
+SELECT *
+FROM TEST_MEMBER
+WHERE JOB = 'CLERK' AND SAL >=1200 ;
+
+/*3) 6.부서 번호가 10번이거나 직책이 ANALYST인 사원의 정보를 조회하시오*/
+SELECT * FROM TEST_MEMBER ;
+SELECT *
+FROM TEST_MEMBER
+WHERE DEPTNO = 10 OR JOB = 'ANALYST' ;
